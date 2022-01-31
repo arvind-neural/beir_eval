@@ -38,7 +38,6 @@ class CustomDEModel:
         embeddings = response['data'][0]['embedding']
         return embeddings
 
-    # Write your own encoding query function (Returns: Query embeddings as numpy array)
     def encode_queries(self, queries: List[str], batch_size: int, **kwargs) -> np.ndarray:
         embeddings = []
         print("encoding queries")
@@ -48,7 +47,6 @@ class CustomDEModel:
         embeddings = np.vstack(embeddings)
         return embeddings
 
-    # Write your own encoding corpus function (Returns: Document embeddings as numpy array)
     def encode_corpus(self, corpus: List[Dict[str, str]], batch_size: int, **kwargs) -> np.ndarray:
         embeddings = []
         print(len(corpus))
